@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { Home, Detail, Search } from 'src';
 
 function App() {
   return (
@@ -20,6 +23,18 @@ function App() {
       </header>
     </div>
   );
+}
+
+class App extends Component {
+  render() {
+      return (
+          <div>
+              <Route exact path="/" component={Home}/>
+              <Route path="/Detail" component={Detail}/>
+              <Route path="/Search" component={Search}/>
+          </div>
+      );
+  }
 }
 
 export default App;
