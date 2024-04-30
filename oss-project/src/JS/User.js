@@ -31,7 +31,12 @@ const User = () => {
             </tr>
             <tr>
                 <td>장애</td>
-                <td></td>
+                <td>
+                    <input type="checkbox" id="hearing" name="disability" value="hearing" />
+                    <label for="hearing">청각 장애</label><br />
+                    <input type="checkbox" id="intellectual" name="disability" value="intellectual" />
+                    <label for="intellectual">지적 장애</label><br />
+                </td>
             </tr>
         </table>
     );
