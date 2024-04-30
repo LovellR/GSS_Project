@@ -5,7 +5,18 @@ const User = () => {
         <table>
             <tr>
                 <td>연령대</td>
-                <td></td>
+                <td>
+                    <select id="age" name="age">
+                        <option value="10">10대</option>
+                        <option value="20">20대</option>
+                        <option value="30">30대</option>
+                        <option value="40">40대</option>
+                        <option value="50">50대</option>
+                        <option value="60">60대</option>
+                        <option value="70">70대</option>
+                        <option value="70">80대 이상</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>임신 여부</td>
