@@ -1,39 +1,38 @@
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './JS/Home'; // Ensure these paths are correct
+import Detail from './JS/Detail'; // Ensure these paths are correct
+import Search from './JS/Search'; // Ensure these paths are correct
 import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { Home, Detail, Search } from 'src';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
 class App extends Component {
   render() {
-      return (
-          <div>
-              <Route exact path="/" component={Home}/>
-              <Route path="/Detail" component={Detail}/>
-              <Route path="/Search" component={Search}/>
-          </div>
-      );
+    return (
+      <div className="App">
+        <Router>
+          <header className="App-header">
+            <nav>
+              <Link to="/">Home</Link> | 
+              <Link to="/detail">Detail</Link> | 
+              <Link to="/search">Search</Link>
+            </nav>
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            </a>
+          </header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/detail" element={<Detail />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </Router>
+      </div>
+    );
   }
 }
 
