@@ -11,9 +11,9 @@ root.render(
   </React.StrictMode>
 );
 
-export { default as Search } from 'src\JS\Search.js';
-export { default as Home } from 'src\JS\Home.js';
-export { default as Detail } from 'src\JS\Detail.js';
+export { default as Search } from './JS/Search.js';
+export { default as Home } from './JS/Home.js';
+export { default as Detail } from './JS/Detail.js';
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
