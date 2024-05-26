@@ -4,6 +4,8 @@ import Home from './JS/Home'; // Ensure these paths are correct
 import Detail from './JS/Detail'; // Ensure these paths are correct
 import Search from './JS/Search'; // Ensure these paths are correct
 import Menu from './JS/Menu'; // Ensure these paths are correct
+import Contact from './JS/Contact'; // Ensure these paths are correct
+
 
 import logo from './logo.svg';
 import './App.css';
@@ -18,6 +20,7 @@ class App extends Component {
             <Route path="/" element={<Home />} />
             <Route path="/detail" element={<Detail />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Router>
       </div>

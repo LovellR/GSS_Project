@@ -1,0 +1,56 @@
+.nav-container {
+    display: flex;
+    height: 60px;
+    align-items: center; 
+    padding: 10px 20px;
+    background-color: rgb(95, 176, 243);
+    justify-content: space-between; 
+    box-shadow: 0px 5px 10px lightgrey;
+  }
+
+ul {
+    list-style-type: none; /* 점 제거 */
+    padding: 0;
+    margin: 0;
+    display: table; /* 가로배치 */
+
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 120%;
+    font-weight : 800;
+    color:rgb(255, 255, 255);
+    margin: 0px 0px 0px 25%;
+}
+
+li {
+    margin-right: 10px; /* 각 항목 사이의 간격 조정 */
+    display: inline-block; /* 가로배치 */
+    text-align: center;
+
+}
+  
+  img {
+    margin-left: 1%;
+    height: 77%;
+    color: white;
+    margin-right: 7%;
+  }
+  
+
+  li a {
+    text-decoration: none;
+  }
+
+  li a:visited {
+    color: inherit;
+  }
+  
+  li a:hover {
+    color: darkslategray;
+  }
+  
+  li > * {
+    margin: 10px; /* 각 링크 요소 사이의 오른쪽 여백을 설정합니다. */
+  }
+
+
