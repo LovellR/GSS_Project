@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './css/menu.css';
+import iconMedi from './css/icon.svg';
 
 const Menu = () => {
     return (
-        <div>
+        <div className='nav-container'>     
+            <img src={iconMedi} alt="Icon" />
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/Detail">Detail</Link></li>
-                <li><Link to="/Search">Search</Link></li>
+                <li><Link to="/">홈</Link></li>
+                <li><Link to="/Search">병용금지약물찾기</Link></li>
+                <li><Link to="/Detail">개인정보기반약물찾기</Link></li>
+                <li><Link to="/Contact">문의</Link></li>
             </ul>
             <hr/>
         </div>
