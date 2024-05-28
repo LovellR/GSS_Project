@@ -1,9 +1,13 @@
 import React from "react";
 import Introduce from "./Introduce.js"
+import SearchBtn from "./SearchBtn.js";
 
 const Home = () => {
     return (
-        <Introduce />
+        <div>
+            <Introduce />
+            <SearchBtn />
+        </div>
     );
 }
 
