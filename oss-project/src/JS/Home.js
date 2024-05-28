@@ -1,7 +1,10 @@
 import React from "react";
+import Introduce from "./Introduce.js"
 
 const Home = () => {
-    return <h1>home 페이지</h1>;
+    return (
+        <Introduce />
+    );
 }
 
 export default Home;
