@@ -1,3 +1,5 @@
+import "./css/PersonalEditor.css";
+
 const PersonalEditor = () => {
     return (
         <div className="editor_wrapper">
