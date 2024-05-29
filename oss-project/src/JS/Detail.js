@@ -1,6 +1,7 @@
 import React from 'react';
 import PersonalEditor from './PersonalEditor';
 import PersonalItem from './PersonalItem';
+
 const Detail = () => {
     return (
         <div>
