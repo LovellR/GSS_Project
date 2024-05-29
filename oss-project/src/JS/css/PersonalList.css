@@ -1,0 +1,19 @@
+.personal-list .list-heading {
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.personal-list .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.personal-list .list-count {
+    border-bottom: 1px solid #1f93ff;;
+}
