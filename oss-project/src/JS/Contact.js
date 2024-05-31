@@ -1,4 +1,5 @@
 import React from 'react';
+import "./css/Contact.css";
 
 const Contact = () => {
     return (
@@ -6,15 +7,14 @@ const Contact = () => {
             <div>
                 <h2>문의페이지</h2>
             </div>
-            <form>
+            <form class="form">
                 <div>
-                    <label >제목: </label>
-                    <input class="title" type="text" />
-                    <label >내용: </label>
-                    <textarea class="content" />
+                    <input placeholder="제목" class="title" type="text" />
+                    <br />
+                    <textarea placeholder="내용" class="content" />
                 </div>
                 <div>
-                    <input type="submit" />
+                    <input class="submit" type="submit" />
                 </div>
             </form>
         </div>
