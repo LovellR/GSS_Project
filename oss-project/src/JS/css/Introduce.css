@@ -1,0 +1,21 @@
+div.intro {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+h2 {
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+h3 {
+    text-align: left;
+}
+p {
+    text-align: left;
+}
+img {
+    max-width: 300px; /* 이미지 크기 조절 */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 이미지 중앙 정렬 */
+}
