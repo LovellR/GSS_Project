@@ -5,6 +5,7 @@ import Detail from './JS/Detail'; // Ensure these paths are correct
 import Search from './JS/Search'; // Ensure these paths are correct
 import Menu from './JS/Menu'; // Ensure these paths are correct
 import Contact from './JS/Contact'; // Ensure these paths are correct
+import NotFound from './JS/NotFound'; // Ensure these paths are correct
 
 
 import logo from './logo.svg';
@@ -21,6 +22,9 @@ class App extends Component {
             <Route path="/detail" element={<Detail />} />
             <Route path="/search" element={<Search />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* 주어진 링크외 다른 주소 접속 시도시 */}
+            <Route path="*" element={<NotFound />} />|
           </Routes>
         </Router>
       </div>
