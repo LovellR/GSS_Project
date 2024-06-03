@@ -11,6 +11,22 @@ app.get("/", (req, res) => {
     console.log('root');
 });
 
+app.post("/Search", (req, res) => {
+    const firstMedicine = req.body.firstMedicine;
+    const secondMedicine = req.body.secondMedicine;
+    const thirdMedicine = req.body.thirdMedicine;
+
+    console.log('Received data:');
+    console.log('First Medicine:', firstMedicine);
+    console.log('Second Medicine:', secondMedicine);
+    console.log('Third Medicine:', thirdMedicine);
+
+    //데이터 베이스 연결필요
+
+    res.send('Data received');
+});
+
+
 app.listen(PORT, ()=> {
     console.log(`server on: http://localhost:${PORT}`);
 })
