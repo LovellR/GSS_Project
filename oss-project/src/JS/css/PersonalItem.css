@@ -1,19 +1,28 @@
 .personal-item {
+    width: 800px;
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgb(240, 240, 240);
+    margin: 8px;
+    border-radius: 15px;
+    padding: 8px;
+    border: 1px solid rgb(203, 203, 203);
 }
 
 .title {
     flex: 1;
+    text-align: left;
 }
 
 .possible {
     flex: 1;
+    text-align: left;
 }
 
 .delete-btn {
-    flex: 1;
+    font-size: 18px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    margin: 10px;
 }
