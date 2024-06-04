@@ -1,0 +1,10 @@
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+.no-border {
+    border-bottom: none !important;
+}
