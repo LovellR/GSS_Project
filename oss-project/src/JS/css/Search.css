@@ -1,8 +1,16 @@
+body{
+    text-align: center;
+    color: #333;
+}
+
 h2 {
     text-align: center;
     margin-top: 40px;
-    color: #333;
     padding-bottom: 20px;
+}
+
+.search-intro {
+    display: inline-block;
 }
 
 .no-border {
@@ -29,20 +37,19 @@ h2 {
 
 .medicine-info span {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     font-weight: bold;
     color: #0056b3;
 }
 
 .medicine-info input {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-
-button {
+.medi_btn {
     display: block;
     width: 100%;
     padding: 10px;
@@ -52,8 +59,23 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
-button:hover {
+.medi_btn:hover {
     background-color: #0056b3;
+}
+
+.search-pic {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 50px;
+    font-size: 13px;
+    color:  #333;
+}
+
+.search-pic:hover {
+    color: #0056b3;
+    cursor: pointer;
 }

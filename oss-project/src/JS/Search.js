@@ -32,7 +32,10 @@ const Search = () => {
             <h2 className='no-border'>
                 병용금지약물페이지
             </h2>
-
+            <div className="search-intro">
+                    <p>이 약이랑 저 약이랑 같이 먹어도 될까?<br></br>
+                        헷갈릴 땐 아래에 약 이름을 넣고 검색해주세요! </p>
+            </div> 
             <div className='medi-container'>
                 <div className="medicine">
                     <div className="medicine-info">
@@ -47,7 +50,7 @@ const Search = () => {
                         <span>세번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={thirdMedicine} onChange={(e)=> setThirdMedicine(e.target.value)}/>
                     </div>
-                    <button onClick={handleSubmit}>전송</button>
+                    <button className="medi_btn" onClick={handleSubmit}>검색</button>
                 </div>
             </div>
             
@@ -56,7 +59,6 @@ const Search = () => {
                     <span>무슨 약인지모르겠나요? 여길 클릭해주세요! </span>
             </div> 
 
-            <button className="result-btn">병용금지약물 확인하기</button>
             <div className="result">
                     <span>병용금지여부 </span>
             </div> 
