@@ -36,15 +36,15 @@ const Search = () => {
             <div className='medi-container'>
                 <div className="medicine">
                     <div className="medicine-info">
-                        <span>첫번째 약 :</span>
+                        <span>첫번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={firstMedicine} onChange={(e)=> setFirstMedicine(e.target.value)}/>
                     </div>
                     <div className="medicine-info">
-                        <span>두번째 약 :</span>
+                        <span>두번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={secondMedicine} onChange={(e)=> setSecondMedicine(e.target.value)}/>
                     </div>
                     <div className="medicine-info">
-                        <span>세번째 약 :</span>
+                        <span>세번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={thirdMedicine} onChange={(e)=> setThirdMedicine(e.target.value)}/>
                     </div>
                     <button onClick={handleSubmit}>전송</button>

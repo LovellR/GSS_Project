@@ -1,12 +1,12 @@
 h2 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     color: #333;
     padding-bottom: 20px;
 }
 
 .no-border {
-    border-bottom: none !important;
+    border-bottom: none
 }
 
 .medi-container {
@@ -17,8 +17,43 @@ h2 {
 }
 
 .medicine {
-    background-color: #fff;
-    padding: 20vh;
+    background-color: #deedf77e;
+    padding: 15vh;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-info {
+    margin-bottom: 50px;
+}
+
+.medicine-info span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.medicine-info input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(95, 176, 243);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
