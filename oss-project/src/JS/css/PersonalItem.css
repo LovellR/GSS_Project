@@ -6,17 +6,20 @@
     margin: 8px;
     border-radius: 15px;
     padding: 8px;
-    border: 1px solid rgb(203, 203, 203);
+    background-color: #5fb0f3;
 }
 
 .title {
     flex: 1;
     text-align: left;
+    color: white;
 }
 
 .possible {
     flex: 1;
     text-align: left;
+    color: white;
+
 }
 
 .delete-btn {
@@ -25,4 +28,5 @@
     height: 40px;
     border: none;
     margin: 10px;
+
 }
