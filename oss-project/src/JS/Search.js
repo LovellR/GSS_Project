@@ -60,7 +60,9 @@ const Search = () => {
             </div> 
 
             <div className="result">
-                    <span>병용금지여부 </span>
+            <h2 className='no-border'>병용금지여부 </h2>
+            <p>아직 검색 결과가 없습니다</p>
+
             </div> 
         </div>
     );

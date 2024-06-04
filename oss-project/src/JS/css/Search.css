@@ -79,3 +79,9 @@ h2 {
     color: #0056b3;
     cursor: pointer;
 }
+
+
+.result {
+    display: inline-block;
+    margin-bottom: 10%;
+}
