@@ -4,6 +4,18 @@ const PORT =  process.env.PORT || 4000;
 const db = require('./config/db.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const axios = require('axios');
+
+function getData(url) {
+    try{
+        const res = axios.get(url);
+        return res.data;
+    }catch(error){
+        console.error('error')
+        return null
+    }
+}
+const openApiUrl = 'https://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown?serviceKey=??&pageNo=1&numOfRows=10'
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,3 +46,4 @@ app.post("/Search", (req, res) => {
 app.listen(PORT, ()=> {
     console.log(`server on: http://localhost:${PORT}`);
 })
+
