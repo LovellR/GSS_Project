@@ -6,16 +6,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
 
-function getData(url) {
-    try{
-        const res = axios.get(url);
-        return res.data;
-    }catch(error){
-        console.error('error')
-        return null
-    }
-}
-const openApiUrl =
+
+const openApiUrl = 'https://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown?serviceKey=pLUk2%2FJBsn3lLvQyMUoW3L%2B%2FEoLW4bEUpOUNA56KVE3Z%2BtX9%2F8PYvUGEvkCNUY%2BYcoU74Xy0Kl39R9A7Ud3CbA%3D%3D&pageNo=2&numOfRows=10';
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -44,20 +36,13 @@ app.post("/Search", (req, res) => {
 
 app.get("/Pharmacy", async (req, res) => {
     try {
-        const response = await axios.get(openApiUrl, {
-            params: {
-                pageNo: 1,
-                numOfRows: 10
-            }
-        });
-
-        const pharmacyData = response.data.body.items.item; // 약국 정보를 가져온 데이터입니다.
-        res.json(pharmacyData); // JSON 형식으로 데이터를 클라이언트에게 보냅니다.
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).send('Internal Server Error'); // 서버 오류가 발생했을 때 처리하는 부분입니다.
-    }
-});
+        const response = await axios.get(openApiUrl);
+        res.send(response.data);
+      } catch (error) {
+        console.error('Fetch error:', error);
+        res.status(500).send('Error fetching data from the API');
+      }
+    });
 
 app.listen(PORT, ()=> {
     console.log(`server on: http://localhost:${PORT}`);
