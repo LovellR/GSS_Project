@@ -15,7 +15,7 @@ function getData(url) {
         return null
     }
 }
-const openApiUrl = 'https://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown?serviceKey=??&pageNo=1&numOfRows=10'
+const openApiUrl = 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -42,6 +42,22 @@ app.post("/Search", (req, res) => {
     res.send('Data received');
 });
 
+app.get("/Pharmacy", async (req, res) => {
+    try {
+        const response = await axios.get(openApiUrl, {
+            params: {
+                pageNo: 1,
+                numOfRows: 10
+            }
+        });
+
+        const pharmacyData = response.data; // 약국 정보를 가져온 데이터입니다.
+        res.json(pharmacyData); // JSON 형식으로 데이터를 클라이언트에게 보냅니다.
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error'); // 서버 오류가 발생했을 때 처리하는 부분입니다.
+    }
+});
 
 app.listen(PORT, ()=> {
     console.log(`server on: http://localhost:${PORT}`);
