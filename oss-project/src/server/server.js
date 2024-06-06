@@ -15,7 +15,7 @@ function getData(url) {
         return null
     }
 }
-const openApiUrl = 
+const openApiUrl =
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -51,7 +51,7 @@ app.get("/Pharmacy", async (req, res) => {
             }
         });
 
-        const pharmacyData = response.data; // 약국 정보를 가져온 데이터입니다.
+        const pharmacyData = response.data.body.items.item; // 약국 정보를 가져온 데이터입니다.
         res.json(pharmacyData); // JSON 형식으로 데이터를 클라이언트에게 보냅니다.
     } catch (error) {
         console.error('Error:', error);
