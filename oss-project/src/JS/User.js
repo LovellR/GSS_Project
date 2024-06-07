@@ -2,6 +2,9 @@ import React from "react";
 import "./css/User.css";
 
 const User = () => {
+    const handleSave = () => {
+
+    };
     return (
         <div>
             <table>
@@ -9,9 +12,10 @@ const User = () => {
                     <th colSpan="2">개인 이력 입력</th>
                 </tr>
                 <tr>
-                    <td>연령대</td>
+                    <td><label htmlFor="age"></label></td>
                     <td>
                         <select id="age" name="age">
+                            <option value="0">10대 미만</option>
                             <option value="10">10대</option>
                             <option value="20">20대</option>
                             <option value="30">30대</option>
@@ -28,9 +32,9 @@ const User = () => {
                     <td>
                         <form>
                             <input type="radio" id="preg" name="opt_preg" value="preg" />
-                            <label for="preg">yes</label> <br />
+                            <label htmlFor="preg">yes</label> <br />
                             <input type="radio" id="non_preg" name="opt_preg" value="non_preg" />
-                            <label for="non_preg">no</label> <br />
+                            <label htmlFor="non_preg">no</label> <br />
                         </form>
                     </td>
                 </tr>
@@ -38,12 +42,13 @@ const User = () => {
                     <td>장애</td>
                     <td>
                         <input type="checkbox" id="hearing" name="disability" value="hearing" />
-                        <label for="hearing">청각 장애</label><br />
+                        <label htmlFor="hearing">청각 장애</label><br />
                         <input type="checkbox" id="intellectual" name="disability" value="intellectual" />
-                        <label for="intellectual">지적 장애</label><br />
+                        <label htmlFor="intellectual">지적 장애</label><br />
                     </td>
                 </tr>
             </table>
+            <button onClick={handleSave}>저장</button>
         </div>
     );
 }
