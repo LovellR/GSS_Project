@@ -85,3 +85,16 @@ h2 {
     display: inline-block;
     margin-bottom: 10%;
 }
+
+/* 표 디자인 */
+
+/* 표 전체 스타일 */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
