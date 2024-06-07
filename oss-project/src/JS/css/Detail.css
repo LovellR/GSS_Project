@@ -23,3 +23,11 @@
 .open_btn:focus {
     outline: none;
 }
+
+.personal_result {
+    width: 950px;
+    margin: 0 auto;
+    padding : 20px;
+    border-radius: 15px;
+    background-color: #deedf77e;
+}

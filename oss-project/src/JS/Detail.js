@@ -20,7 +20,7 @@ const Detail = () => {
                 </button>
                 {visible && <User />}
             </div> 
-            <div>
+            <div className='personal_result'>
                 <PersonalEditor />
                 <PersonalList />
             </div>
