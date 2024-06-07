@@ -10,7 +10,21 @@ const Pharmacy = () => {
             fetchPharmacies(selectedRegion);
         }
     }, [selectedRegion]);
+
+    const fetchPharmacies = async (region) => {
+        try {
+            const response = await fetch(`/api/pharmacies?region=${region}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setPharmacies(data);
+        } catch (error) {
+            console.error('Error fetching pharmacies:', error);
+        }
+    };
     
+
     return (
         <div>     
             <h2 className='no-border'>

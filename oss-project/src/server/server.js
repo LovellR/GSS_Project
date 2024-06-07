@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 4000;
 const db = require('./config/db.js');
+const pharmacyDb = require('./config/pharmacydb');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
@@ -85,8 +86,8 @@ const savePharmacyData = (pharmacies) => {
 };
 */
 
-app.get("/Pharmacy", async (req, res) => {
-    console.log('Pharmacy data');
+app.get("/api/pharmacies", async (req, res) => {
+    const region = req.query.region;
 });
 
 
