@@ -38,15 +38,26 @@ app.post("/Search", (req, res) => {
 
 app.get("/Pharmacy", async (req, res) => {
     const queryParams = `?serviceKey=${serviceKey}&pageNo=2&numOfRows=10`;
-    
-    try {
-        const response = await axios.get(openApiUrl);
-        res.send(response.data);
-      } catch (error) {
-        console.error('Fetch error:', error);
-        res.status(500).send('Error fetching data from the API');
-      }
+
+    request({
+        url: openApiUrl + queryParams,
+        method: 'GET'
+    }, function (error, response, body) {
+        if (error) {
+            console.error('Fetch error:', error);
+            res.status(500).send('Error fetching data from the API');
+        } else {
+            parseString(body, (err, result) => {
+                if (err) {
+                    console.error('XML parsing error:', err);
+                    res.status(500).send('Error parsing XML data');
+                } else {
+                    res.json(result);
+                }
+            });
+        }
     });
+});
 
 
     
