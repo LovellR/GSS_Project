@@ -1,0 +1,87 @@
+body{
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.search-intro {
+    display: inline-block;
+}
+
+.no-border {
+    border-bottom: none
+}
+
+.medi-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.medicine {
+    background-color: #deedf77e;
+    padding: 15vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-info {
+    margin-bottom: 50px;
+}
+
+.medicine-info span {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.medicine-info input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.medi_btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(95, 176, 243);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.medi_btn:hover {
+    background-color: #0056b3;
+}
+
+.search-pic {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 50px;
+    font-size: 13px;
+    color:  #333;
+}
+
+.search-pic:hover {
+    color: #0056b3;
+    cursor: pointer;
+}
+
+
+.result {
+    display: inline-block;
+    margin-bottom: 10%;
+}
