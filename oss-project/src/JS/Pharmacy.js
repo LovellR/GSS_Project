@@ -14,10 +14,18 @@ const Pharmacy = () => {
                 <option value="청주시">청주시</option>
             </select>
 
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>약국 이름</th>
+                        <th>주소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td> 약국이름1</td>
+                    <td> 약국주소1</td>
+                </tbody>
+            </table>
         </div>
     );
 };
