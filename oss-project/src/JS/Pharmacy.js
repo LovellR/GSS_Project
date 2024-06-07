@@ -23,7 +23,10 @@ const Pharmacy = () => {
             console.error('Error fetching pharmacies:', error);
         }
     };
-    
+
+    const handleRegion = (event) => {
+        setSelectedRegion(event.target.value);
+    };
 
     return (
         <div>     
@@ -33,8 +36,8 @@ const Pharmacy = () => {
 
             <select onChange={handleRegion} value={selectedRegion}>
                 <option value="">지역 선택</option>
-                <option value="서울시">서울시</option>
-                <option value="청주시">청주시</option>
+                <option value="서울">서울시</option>
+                <option value="청주">청주시</option>
             </select>
 
             <table>
@@ -45,8 +48,12 @@ const Pharmacy = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <td> 약국이름1</td>
-                    <td> 약국주소1</td>
+                    {pharmacies.map((pharmacy, index) => (
+                        <tr key={index}>
+                            <td>{pharmacy.name}</td>
+                            <td>{pharmacy.address}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
