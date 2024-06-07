@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    width: 600px;
+    margin: 20px auto;
+}
+
+tr {
+    height: 50px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* 라디오 버튼 및 체크 박스 레이블 스타일링 */
+label {
+    font-size: 14px;
+    cursor: pointer;
+}
