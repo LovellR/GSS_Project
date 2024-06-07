@@ -69,6 +69,19 @@ const fetchData = (pageNo) => {
     });
 };
 
+const savePharmacyData = (pharmacies) => {
+    pharmacies.forEach(pharmacy => {
+        const { name, address, latitude, longitude } = pharmacy;
+        db.query('INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?, ?, ?, ?)', 
+            [name, address, latitude, longitude], 
+            (err) => {
+                if (err) {
+                    console.error('Database insert error:', err);
+                }
+            }
+        );
+    });
+};
 
 
 app.get("/Pharmacy", async (req, res) => {
