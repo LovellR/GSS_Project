@@ -88,6 +88,18 @@ const savePharmacyData = (pharmacies) => {
 
 app.get("/api/pharmacies", async (req, res) => {
     const region = req.query.region;
+
+    // 데이터베이스에서 지역에 따라 약국 정보를 검색하는 쿼리
+    const query = 'SELECT * FROM pharmacies WHERE address LIKE ?';
+    const likeRegion = `%${region}%`;
+
+    db.query(query, [likeRegion], (err, results) => {
+        if (err) {
+            console.error('Database query error:', err);
+            return res.status(500).json({ error: 'Database query error' });
+        }
+        res.json(results);
+    });
 });
 
 
