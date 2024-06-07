@@ -102,8 +102,24 @@ table {
   /* 표 헤더 스타일 */
   th {
     background-color: rgb(95, 176, 243);
-    border: 1px solid black;
     padding: 10px;
     text-align: center;
     color: white;
+  }
+
+
+/* 표 셀 스타일 */
+ td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* 짝수 행 배경색 */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* 행 선택시 */
+  tr:hover {
+    background-color: #f2f2f2;
   }
