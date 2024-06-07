@@ -26,7 +26,7 @@ class App extends Component {
             <Route path="/contact" element={<Contact />} />
             <Route path="/pharmacy" element={<Pharmacy />} />
 
-
+            
             {/* 주어진 링크외 다른 주소 접속 시도시 */}
             <Route path="*" element={<NotFound />} />|
           </Routes>

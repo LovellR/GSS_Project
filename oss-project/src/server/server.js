@@ -86,7 +86,7 @@ const savePharmacyData = (pharmacies) => {
 */
 
 app.get("/Pharmacy", async (req, res) => {
-    console.log('Pharmacy data:');
+    console.log('Pharmacy data');
 });
 
 
