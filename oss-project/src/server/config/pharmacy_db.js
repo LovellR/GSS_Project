@@ -7,3 +7,12 @@ const db = mysql.createConnection({
     database: 'pharmacy_db'
 });
 
+db.connect((err) => {
+    if (err) {
+        console.error('MySQL connection error:', err);
+        return;
+    }
+    console.log('Connected to MySQL database');
+});
+
+module.exports = db;
