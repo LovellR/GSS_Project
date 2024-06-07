@@ -94,7 +94,16 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     text-align: center;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
   }
   
+  /* 표 헤더 스타일 */
+  th {
+    background-color: rgb(95, 176, 243);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
