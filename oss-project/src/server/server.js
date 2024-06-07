@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 4000;
-const db = require('./config/db.js');
+const db = require('./config/pharmacy_db.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
@@ -36,7 +36,7 @@ app.post("/Search", (req, res) => {
     res.send('Data received');
 });
 
-
+/*
 const fetchData = (pageNo) => {
     return new Promise((resolve, reject) => {
         const queryParams = `?serviceKey=${serviceKey}&pageNo=${pageNo}&numOfRows=10`;
@@ -82,30 +82,11 @@ const savePharmacyData = (pharmacies) => {
         );
     });
 };
+*/
 
 app.get("/Pharmacy", async (req, res) => {
-    try {
-        let pageNo = 1;
-        let totalPages = 1;
-
-        do {
-            const { pharmacies, totalPages: fetchedTotalPages } = await fetchData(pageNo);
-            savePharmacyData(pharmacies);
-
-            if (pageNo === 1) {
-                totalPages = fetchedTotalPages;
-            }
-            //페이지 넘버 증가
-            pageNo++;
-        } while (pageNo <= totalPages);
-
-        res.send('Data fetching and saving completed');
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).send('Error fetching data from the API');
-    }
+    console.log('Pharmacy data:');
 });
-
 
 
     
