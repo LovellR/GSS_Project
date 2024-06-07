@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 4000;
 const db = require('./config/db.js');
-const pharmacyDb = require('./config/pharmacydb');
+const pharmacyDb = require('./config/pharmacy_db.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
@@ -93,11 +93,12 @@ app.get("/api/pharmacies", async (req, res) => {
     const query = 'SELECT * FROM pharmacies WHERE address LIKE ?';
     const likeRegion = `%${region}%`;
 
-    db.query(query, [likeRegion], (err, results) => {
+    pharmacyDb.query(query, [likeRegion], (err, results) => {
         if (err) {
             console.error('Database query error:', err);
             return res.status(500).json({ error: 'Database query error' });
         }
+        console.log('Database query results:', results); // 디버깅을 위해 추가
         res.json(results);
     });
 });
