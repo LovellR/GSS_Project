@@ -7,6 +7,7 @@ import Menu from './JS/Menu'; // Ensure these paths are correct
 import Footer from './JS/Footer'; // Ensure these paths are correct
 import Contact from './JS/Contact'; // Ensure these paths are correct
 import NotFound from './JS/NotFound'; // Ensure these paths are correct
+import Pharmacy from './JS/Pharmacy'; // Ensure these paths are correct
 
 
 import logo from './logo.svg';
@@ -23,6 +24,8 @@ class App extends Component {
             <Route path="/detail" element={<Detail />} />
             <Route path="/search" element={<Search />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/pharmacy" element={<Pharmacy />} />
+
 
             {/* 주어진 링크외 다른 주소 접속 시도시 */}
             <Route path="*" element={<NotFound />} />|

@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 4000;
-const db = require('./config/pharmacy_db.js');
+const db = require('./config/db.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
-const request = require('request');
+/*const request = require('request');
 const { parseString } = require('xml2js');
 
 const openApiUrl = 'http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown';
 const serviceKey = 'pLUk2%2FJBsn3lLvQyMUoW3L%2B%2FEoLW4bEUpOUNA56KVE3Z%2BtX9%2F8PYvUGEvkCNUY%2BYcoU74Xy0Kl39R9A7Ud3CbA%3D%3D';
+*/
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
