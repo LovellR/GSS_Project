@@ -85,3 +85,41 @@ h2 {
     display: inline-block;
     margin-bottom: 10%;
 }
+
+/* 표 디자인 */
+
+/* 표 전체 스타일 */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* 표 헤더 스타일 */
+  th {
+    background-color: rgb(95, 176, 243);
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+
+/* 표 셀 스타일 */
+ td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* 짝수 행 배경색 */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* 행 선택시 */
+  tr:hover {
+    background-color: #f2f2f2;
+  }

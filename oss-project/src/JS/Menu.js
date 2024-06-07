@@ -11,6 +11,7 @@ const Menu = () => {
                 <li className='nav-li'><Link to="/">홈</Link></li>
                 <li className='nav-li'><Link to="/Search">병용금지약물찾기</Link></li>
                 <li className='nav-li'><Link to="/Detail">개인정보기반약물찾기</Link></li>
+                <li className='nav-li'><Link to="/Pharmacy">약국위치찾기</Link></li>
                 <li className='nav-li'><Link to="/Contact">문의</Link></li>
             </ul>
             <hr/>
