@@ -36,6 +36,41 @@ app.post("/Search", (req, res) => {
     res.send('Data received');
 });
 
+
+const fetchData = (pageNo) => {
+    return new Promise((resolve, reject) => {
+        const queryParams = `?serviceKey=${serviceKey}&pageNo=${pageNo}&numOfRows=10`;
+
+        request({
+            url: openApiUrl + queryParams,
+            method: 'GET'
+        }, (error, response, body) => {
+            if (error) {
+                return reject(error);
+            }
+
+            parseString(body, (err, result) => {
+                if (err) {
+                    return reject(err);
+                }
+
+                const totalPages = Math.ceil(result.response.body[0].totalCount[0] / 10);
+
+                const pharmacies = result.response.body[0].items[0].item.map(pharmacy => ({
+                    name: pharmacy.dutyName[0],
+                    address: pharmacy.dutyAddr[0],
+                    latitude: parseFloat(pharmacy.wgs84Lat[0]),
+                    longitude: parseFloat(pharmacy.wgs84Lon[0])
+                }));
+
+                resolve({ pharmacies, totalPages });
+            });
+        });
+    });
+};
+
+
+
 app.get("/Pharmacy", async (req, res) => {
     const queryParams = `?serviceKey=${serviceKey}&pageNo=2&numOfRows=10`;
 
