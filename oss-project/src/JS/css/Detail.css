@@ -4,12 +4,11 @@
     margin: 10px auto;
     padding: 10px;
     border-radius: 15px;
+    border: none;
 }
 
-.input_personal button {
-    background-color: rgb(245, 245, 245);
-    width: 80px;
-    height: 30px;
+.open_btn {
+    background-color: none;
     border: none;    
     font-size: 16px;
     border-radius: 5px;
@@ -17,11 +16,10 @@
     transition: background-color 0.3s;
 }
 
-.input_personal button:hover {
+.open_btn:hover {
     text-decoration: underline;
-    text-decoration-color: #0056b3;
 }
 
-.input_personal button:focus {
-    outline:hwb(from color h w b)
+.open_btn:focus {
+    outline: none;
 }

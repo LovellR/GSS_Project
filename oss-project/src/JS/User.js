@@ -63,7 +63,7 @@ const User = () => {
                     </td>
                 </tr>
             </table>
-            <button onClick={handleSave}>저장</button>
+            <button className="personal_btn" onClick={handleSave}>저장</button>
         </div>
     );
 }
