@@ -83,29 +83,29 @@ const savePharmacyData = (pharmacies) => {
     });
 };
 
-
 app.get("/Pharmacy", async (req, res) => {
-    const queryParams = `?serviceKey=${serviceKey}&pageNo=2&numOfRows=10`;
+    try {
+        let pageNo = 1;
+        let totalPages = 1;
 
-    request({
-        url: openApiUrl + queryParams,
-        method: 'GET'
-    }, function (error, response, body) {
-        if (error) {
-            console.error('Fetch error:', error);
-            res.status(500).send('Error fetching data from the API');
-        } else {
-            parseString(body, (err, result) => {
-                if (err) {
-                    console.error('XML parsing error:', err);
-                    res.status(500).send('Error parsing XML data');
-                } else {
-                    res.json(result);
-                }
-            });
-        }
-    });
+        do {
+            const { pharmacies, totalPages: fetchedTotalPages } = await fetchData(pageNo);
+            savePharmacyData(pharmacies);
+
+            if (pageNo === 1) {
+                totalPages = fetchedTotalPages;
+            }
+            //페이지 넘버 증가
+            pageNo++;
+        } while (pageNo <= totalPages);
+
+        res.send('Data fetching and saving completed');
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send('Error fetching data from the API');
+    }
 });
+
 
 
     
