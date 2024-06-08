@@ -146,3 +146,12 @@ option:checked {
     color: white;
     font-weight: bold;
 }
+
+/* span 문구 스타일링 */
+#selectcity {
+    font-size: 20px; /* 텍스트 크기 조정 */
+    font-weight: bold; /* 굵은 글꼴 적용 */
+    color: #333; /* 글자색 변경 */
+    margin-bottom: 10px; /* 아래 여백 추가 */
+    display: block; /* 블록 레벨 요소로 변환 */
+}
