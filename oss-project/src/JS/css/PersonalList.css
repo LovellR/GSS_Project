@@ -1,15 +1,14 @@
 .personal-list {
     width: 900px;
-    background-color: rgb(229, 229, 229);
+    border: 2px solid rgb(229, 229, 229);
     border-radius: 15px;
     margin: 0 auto;
 }
 
-.personal-list .list-heading {
+.personal-list {
     margin-bottom: 10px;
     border: none;
     box-sizing: border-box;
-    padding-top: 15px;
 }
 
 .list-count {
@@ -23,6 +22,3 @@
     gap: 20px;
 }
 
-.personal-list .list-count {
-    border-bottom: 1px solid #1f93ff;;
-}
