@@ -40,6 +40,14 @@ app.post("/Search", (req, res) => {
 
     const firstM = `%${firstMedicine}%`;
     const secondM = `%${secondMedicine}%`;
+
+    db.query(query, [firstM, secondM], (err, results) => {
+        if (err) {
+            console.error('Database query error:', err);
+            return res.status(500).json({ error: 'Database query error' });
+        }
+        res.json(results);
+    });
 });
 
 /*
