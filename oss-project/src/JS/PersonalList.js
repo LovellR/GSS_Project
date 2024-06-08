@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PersonalItem from "./PersonalItem";
 import "./css/PersonalList.css";
 
@@ -9,7 +10,7 @@ const PersonalList = ({ PSearch }) => {
             </div>
             <div className="list-wrapper">
                 {PSearch.map((it) => (
-                    <PersonalItem {...it} />
+                    <PersonalItem key={it.id} {...it} />
                 ))}
             </div>
         </div>

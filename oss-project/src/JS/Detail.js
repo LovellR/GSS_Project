@@ -16,7 +16,7 @@ const mockPSearch = [
 const Detail = () => {
     const [visible, setVisible] = useState(false);
     const [PSearch, setPSearch] = useState(mockPSearch);
-    const idRef = useRef(3); // 기존 목데이터가 인덱스 2까지 사용하기 때문에 3으로 초기화함
+    const idRef = useRef(1); // 기존 목데이터가 인덱스 2까지 사용하기 때문에 3으로 초기화함
     
     const onCreate = (content) => {
         const newItem = {
@@ -26,6 +26,10 @@ const Detail = () => {
         };
         setPSearch([newItem, ...PSearch]);
         idRef.current += 1;
+    };
+
+    const onDelete = (targetId) =>{
+        setPSearch(PSearch.filter((it) => it.id !== targetId));
     };
 
     return (
@@ -42,7 +46,7 @@ const Detail = () => {
             </div> 
             <div className='personal_result'>
                 <PersonalEditor onCreate={onCreate} />
-                <PersonalList PSearch={PSearch} />
+                <PersonalList PSearch={PSearch} onDelete={onDelete} />
             </div>
         </div>
     );
