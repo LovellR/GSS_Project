@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WithoutImage from './WithoutImage';
+import axios from 'axios';
 
 const Detect = () => {
     const [visible, setVisible] = useState(false);
