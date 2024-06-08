@@ -52,7 +52,14 @@ const Detect = () => {
                             style={{ padding: '3%', display: 'block', margin: '0 auto' }}
                             onChange={onUpload}
                         />
-                        
+                        {imageSrc && (
+                            <div style={{ position: 'relative', marginTop: '20px' }}>
+                                <img 
+                                    style={{ display: 'inline-block', maxWidth: '100%', maxHeight: '400px' }} 
+                                    src={imageSrc} 
+                                />
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
