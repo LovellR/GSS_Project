@@ -59,6 +59,28 @@ app.post("/Search", (req, res) => {
     });
 });
 
+
+app.get("/api/old_table", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    const sqlQuery = "SELECT * FROM old_table";
+
+    db.query(sqlQuery, (err, result) => {
+        res.send(result);
+    });
+});
+
+
+app.get("/api/preg_table", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    const sqlQuery = "SELECT * FROM preg_table";
+
+    db.query(sqlQuery, (err, result) => {
+        res.send(result);
+    });
+});
+
 /*
 const fetchData = (pageNo) => {
     return new Promise((resolve, reject) => {

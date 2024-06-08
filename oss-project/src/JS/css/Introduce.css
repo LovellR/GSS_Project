@@ -13,9 +13,15 @@ h3 {
 p {
     text-align: left;
 }
+
+div.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 img {
-    max-width: 300px; /* 이미지 크기 조절 */
+    max-width: 400px; /* 이미지 크기 조절 */
     height: auto;
-    display: block;
-    margin: 0 auto; /* 이미지 중앙 정렬 */
 }
