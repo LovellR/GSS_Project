@@ -32,7 +32,19 @@ const Detect = () => {
 
     return (
         <div>
-            
+            <div style={{ textAlign: 'center' }}>
+                {!visible && (
+                    
+                )}
+            </div>
+            <div>
+                {!imageSrc && (
+                    
+                )}
+                <div className='withoutimage'>
+                    {visible && <WithoutImage />}
+                </div>
+            </div>
         </div>
     );
 };
