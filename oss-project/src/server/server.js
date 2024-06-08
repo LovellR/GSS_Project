@@ -46,6 +46,15 @@ app.post("/Search", (req, res) => {
             console.error('Database query error:', err);
             return res.status(500).json({ error: 'Database query error' });
         }
+
+        console.log('Query executed successfully')
+        console.log('Query results:', results);
+
+        if (results.length === 0) {
+            console.log('No results found for the given query.');
+            return res.status(404).json({ message: 'No results found' });
+        }
+
         res.json(results);
     });
 });
