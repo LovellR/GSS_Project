@@ -68,3 +68,9 @@ def update_json_files(directory, new_drug_name):
             # categories 리스트의 name 필드 수정
             if 'categories' in data and len(data['categories']) > 0:
                 data['categories'][0]['name'] = new_drug_name
+                
+                # 수정된 내용을 다시 JSON 파일로 저장
+            with open(file_path, 'w', encoding='utf-8') as file:
+                json.dump(data, file, ensure_ascii=False, indent=4)
+
+    print(f"{directory}의 모든 JSON 파일의 'categories' 필드를 '{new_drug_name}'로 수정했습니다.")
