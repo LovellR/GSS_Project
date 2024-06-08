@@ -55,6 +55,15 @@ const Detect = () => {
         });
     };
 
+    const processDetectionResult = (result) => {
+        if (!result || !result.predictions || result.predictions.length === 0) {
+            return '감지 결과가 없습니다.';
+        }
+
+        
+        return message;
+    };
+
     return (
         <div>
             <div style={{ textAlign: 'center' }}>
