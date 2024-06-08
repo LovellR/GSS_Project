@@ -125,7 +125,7 @@ const Pharmacy = () => {
             </h2>
 
             <div>
-            <span> 도시를 선택하세요 </span>
+            <span id= 'selectcity'> 도시를 선택하세요 </span>
             <select onChange={handleRegion} value={selectedRegion}>
             <option value="">지역 선택</option>
                 {cities.map(city => (
