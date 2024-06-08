@@ -56,6 +56,18 @@ return (
                 <input type="text" value={identification} onChange={(e) => setIdentification(e.target.value)} />
                 </td>
             </tr>
+            <tr>
+                <td>제품명/성분명:</td>
+                <td>
+                <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
+                </td>
+            </tr>
+            <tr>
+                <td>회사명:</td>
+                <td>
+                <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                </td>
+            </tr>
             
             </tbody>
         </table>
