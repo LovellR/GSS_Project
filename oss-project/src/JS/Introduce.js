@@ -6,7 +6,9 @@ const Introduce = () => {
         <div className="intro">
             <h2>인사말</h2>
             <h3>안녕하세요. [약물앱이름]입니다.</h3>
-            <img src="img/intro.jpg"></img>
+            <div className="img-container">
+                <img src="img/intro.jpg"></img>
+            </div>
             <p>
                 [약물웹이름]은 2024-1학기 오픈소스기초프로젝트에서 "건강"을 주제로 시작된 프로젝트입니다. 위 프로젝트의 주목적은 약물 복용 사고를 방지하기 위한 웹을 제작하는 것입니다. 
                 <br /> <br />
