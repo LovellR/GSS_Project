@@ -68,7 +68,17 @@ return (
                 <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
                 </td>
             </tr>
-            
+            <tr>
+                <td>제형 선택:</td>
+                <td>
+                <div>
+                    {types.map((type, index) => (
+                    <button key={index} onClick={() => handletypeSelection(type)}style={{ border: selectedType === type ? '3px solid black' : '1px solid grey' }}>
+                    </button>
+                    ))}
+                </div>
+                </td>
+            </tr>
             </tbody>
         </table>
         </form>
