@@ -79,6 +79,11 @@ return (
                 </div>
                 </td>
             </tr>
+            <tr>
+                <td colSpan="2">
+                <button type="submit">제출</button>
+                </td>
+            </tr>
             </tbody>
         </table>
         </form>
