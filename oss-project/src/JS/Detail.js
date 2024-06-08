@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 import PersonalEditor from './PersonalEditor';
 import PersonalList from './PersonalList';
 import User from './User';
@@ -26,14 +26,16 @@ const mockPSearch = [
 const Detail = () => {
     const [visible, setVisible] = useState(false);
     const [PSearch, setPSearch] = useState(mockPSearch);
-
+    const idRef = useRef(3); // 기존 목데이터가 인덱스 2까지 사용하기 때문에 3으로 초기화함
+    
     const onCreate = (content) => {
         const newItem = {
-            id: 0,
+            id: idRef.current,
             content,
             isPossible: false,
         };
         setPSearch([newItem, ...PSearch]);
+        idRef.current += 1;
     };
 
     return (

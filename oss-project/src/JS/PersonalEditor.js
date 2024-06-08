@@ -6,6 +6,10 @@ const PersonalEditor = ({ onCreate }) => {
     const onChangeContent = (e) => {
         setContent(e.target.value);
     };
+    const onSubmit = () =>{
+        onCreate(content);
+    };
+
     return (
         <div className="editor_wrapper">
             <input 
@@ -14,7 +18,12 @@ const PersonalEditor = ({ onCreate }) => {
                 value={content}
                 onChange={onChangeContent}
             />
-            <button type="submit">검색</button>
+            <button 
+                type="submit"
+                onClick={onSubmit}
+            >
+                검색
+            </button>
         </div>
     );
 };
