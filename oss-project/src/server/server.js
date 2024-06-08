@@ -1,122 +1,92 @@
-const express = require("express");
-const app = express();
-const PORT =  process.env.PORT || 4000;
-//const db = require('./config/db.js');
-const db = require('./config/pharmacy_db.js');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const axios = require('axios');
-/*const request = require('request');
-const { parseString } = require('xml2js');
+import React, {useState} from 'react';
+import axios from 'axios';
+import "./css/Search.css";
 
-const openApiUrl = 'http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown';
-const serviceKey = 'pLUk2%2FJBsn3lLvQyMUoW3L%2B%2FEoLW4bEUpOUNA56KVE3Z%2BtX9%2F8PYvUGEvkCNUY%2BYcoU74Xy0Kl39R9A7Ud3CbA%3D%3D';
-*/
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-app.use(cors());
+//병용금지페이지
+const Search = () => {
+    const [firstMedicine, setFirstMedicine] = useState('');
+    const [secondMedicine, setSecondMedicine] = useState('');
+    //const [thirdMedicine, setThirdMedicine] = useState('');
+    const [result, setResult] = useState(null);
 
 
-app.get("/", (req, res) => {
-    console.log('root');
-});
-
-app.post("/Search", (req, res) => {
-    const firstMedicine = req.body.firstMedicine;
-    const secondMedicine = req.body.secondMedicine;
-    //const thirdMedicine = req.body.thirdMedicine;
-
-    console.log('Received data:');
-    console.log('First Medicine:', firstMedicine);
-    console.log('Second Medicine:', secondMedicine);
-    //console.log('Third Medicine:', thirdMedicine);
-
-    const query = `
-    SELECT 제품명A, 업소명A, 제품명B, 업소명B, 금기사유 
-    FROM 병용금기약물 
-    WHERE 제품명A = ? AND 제품명B = ?`;
-
-    const firstM = `%${firstMedicine}%`;
-    const secondM = `%${secondMedicine}%`;
-
-    db.query(query, [firstM, secondM], (err, results) => {
-        if (err) {
-            console.error('Database query error:', err);
-            return res.status(500).json({ error: 'Database query error' });
+    const handleSubmit  = (e) =>{
+        e.preventDefault();
+        
+        const data = {
+            firstMedicine: firstMedicine,
+            secondMedicine:secondMedicine,
+            //thirdMedicine: thirdMedicine
         }
-        res.json(results);
-    });
-});
 
-/*
-const fetchData = (pageNo) => {
-    return new Promise((resolve, reject) => {
-        const queryParams = `?serviceKey=${serviceKey}&pageNo=${pageNo}&numOfRows=10`;
-
-        request({
-            url: openApiUrl + queryParams,
-            method: 'GET'
-        }, (error, response, body) => {
-            if (error) {
-                return reject(error);
-            }
-
-            parseString(body, (err, result) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                const totalPages = Math.ceil(result.response.body[0].totalCount[0] / 10);
-
-                const pharmacies = result.response.body[0].items[0].item.map(pharmacy => ({
-                    name: pharmacy.dutyName[0],
-                    address: pharmacy.dutyAddr[0],
-                    latitude: parseFloat(pharmacy.wgs84Lat[0]),
-                    longitude: parseFloat(pharmacy.wgs84Lon[0])
-                }));
-
-                resolve({ pharmacies, totalPages });
-            });
+        axios.post('http://localhost:4000/Search', data)
+        .then(res=>{
+            setResult(res.data);
+            console.log(res.data);
+        }) 
+        .catch(function(error){
+            alert('failed');
         });
-    });
-};
+    };
 
-const savePharmacyData = (pharmacies) => {
-    pharmacies.forEach(pharmacy => {
-        const { name, address, latitude, longitude } = pharmacy;
-        db.query('INSERT INTO pharmacies (name, address, latitude, longitude) VALUES (?, ?, ?, ?)', 
-            [name, address, latitude, longitude], 
-            (err) => {
-                if (err) {
-                    console.error('Database insert error:', err);
-                }
-            }
-        );
-    });
-};
-*/
+    return (
+        <div>
+            <h2 className='no-border'>
+                병용금지약물페이지
+            </h2>
+            <div className="search-intro">
+                    <p>이 약이랑 저 약이랑 같이 먹어도 될까?<br></br>
+                        헷갈릴 땐 아래에 약 이름을 넣고 검색해주세요! </p>
+            </div> 
+            <div className='medi-container'>
+                <div className="medicine">
+                    <div className="medicine-info">
+                        <span>첫번째 약</span>
+                        <input type="text" placeholder="약 이름 입력" value={firstMedicine} onChange={(e)=> setFirstMedicine(e.target.value)}/>
+                    </div>
+                    <div className="medicine-info">
+                        <span>두번째 약</span>
+                        <input type="text" placeholder="약 이름 입력" value={secondMedicine} onChange={(e)=> setSecondMedicine(e.target.value)}/>
+                    </div>
+                    {/* 
+                    <div className="medicine-info">
+                        <span>세번째 약</span>
+                        <input type="text" placeholder="약 이름 입력" value={thirdMedicine} onChange={(e)=> setThirdMedicine(e.target.value)}/>
+                    </div>
+                     */}
+                    <button className="medi_btn" onClick={handleSubmit}>검색</button>
+                </div>
+            </div>
+            
+            
+            <div className="search-pic">
+                    <span>무슨 약인지모르겠나요? 여길 클릭해주세요! </span>
+            </div> 
 
-app.get("/api/pharmacies", async (req, res) => {
-    const region = req.query.region;
-
-    // 데이터베이스에서 지역에 따라 약국 정보를 검색하는 쿼리
-    const query = 'SELECT * FROM pharmacies WHERE address LIKE ?';
-    const likeRegion = `%${region}%`;
-
-    db.query(query, [likeRegion], (err, results) => {
-        if (err) {
-            console.error('Database query error:', err);
-            return res.status(500).json({ error: 'Database query error' });
-        }
-        // console.log('Database query results:', results); // 디버깅을 위해 추가
-        res.json(results);
-    });
-});
-
-
+            <div className="result">
+            <h2 className='no-border'>병용금지여부 </h2>
+            {/* <p>아직 검색 결과가 없습니다</p> */}
     
-app.listen(PORT, ()=> {
-    console.log(`server on: http://localhost:${PORT}`);
-})
+    <div>
+        <h2 className='no-border'>병용금지여부</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>제품명A</th>
+                    <th>업소명A</th>
+                    <th>제품명B</th>
+                    <th>업소명B</th>
+                    <th>중증사유</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+)}
+            </div> 
+        </div>
+    );
+};
+
+export default Search;
