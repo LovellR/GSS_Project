@@ -23,6 +23,14 @@ const handletypeSelection = (type) => {
     setSelectedType(type === selectedType ? '' : type);
 };
 
+const handledividerSelection = (divider) => {
+    setSelectedDivider(divider === selectedDivider ? '' : divider);
+};
+
+const handleColorSelection = (color) => {
+    setSelectedColor(color === selectedColor ? '' : color);
+};
+
 const handleSubmit = (e) => {
     e.preventDefault();
 };
