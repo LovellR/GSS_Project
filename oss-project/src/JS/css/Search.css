@@ -126,6 +126,15 @@ table {
 
   #alertMessage {
     color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 옵션 요소의 기본 스타일 */
+option {
+    background-color: rgb(204, 230, 239);
+    color: black;
     font-size: 16px;
     font-weight: bold;
 }
