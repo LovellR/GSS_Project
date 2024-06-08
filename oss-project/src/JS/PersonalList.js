@@ -2,7 +2,7 @@ import { useState } from "react";
 import PersonalItem from "./PersonalItem";
 import "./css/PersonalList.css";
 
-const PersonalList = ({ PSearch }) => {
+const PersonalList = ({ PSearch, onDelete }) => {
     return (
         <div className="personal-list">
             <div className="list-count">
@@ -10,7 +10,7 @@ const PersonalList = ({ PSearch }) => {
             </div>
             <div className="list-wrapper">
                 {PSearch.map((it) => (
-                    <PersonalItem key={it.id} {...it} />
+                    <PersonalItem key={it.id} {...it} onDelete={onDelete} />
                 ))}
             </div>
         </div>
