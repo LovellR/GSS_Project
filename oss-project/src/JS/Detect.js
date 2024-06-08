@@ -91,7 +91,15 @@ const Detect = () => {
             case '- 25mg':
                 message = '산디문뉴오랄연질캡슐 25mg';
                 break;
-            
+            case '- 275mg-PTP':
+                message = '에이프로젠나프록센나트륨정 275mg/PTP';
+                break;
+            case '-4- 10mg':
+                message = '비유피-4정 10mg';
+                break;
+            case '-4- 20mg':
+                message = '비유피-4정 20mg';
+                break;
             default:
                 message = '알 수 없는 약입니다.';
         }
