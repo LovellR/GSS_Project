@@ -74,3 +74,7 @@ def update_json_files(directory, new_drug_name):
                 json.dump(data, file, ensure_ascii=False, indent=4)
 
     print(f"{directory}의 모든 JSON 파일의 'categories' 필드를 '{new_drug_name}'로 수정했습니다.")
+    
+if __name__ == "__main__":
+    for directory, new_drug_name in directories_and_drug_names:
+        update_json_files(directory, new_drug_name)
