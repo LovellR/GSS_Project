@@ -95,7 +95,19 @@ return (
                 <div>
                     {shapes.map((shape, index) => (
                     <button key={index} onClick={() => handleShapeSelection(shape)}style={{ border: selectedShape === shape ? '3px solid black' : '1px solid grey' }}>
-                        </button>
+                        {shape === '원형' && (
+                        <img src="https://www.health.kr/images/pills/shape01.jpg" alt="정제" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '타원형' && (
+                        <img src="https://www.health.kr/images/pills/shape02.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '장방형' && (
+                        <img src="https://www.health.kr/images/pills/shape07.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '반원형' && (
+                        <img src="https://www.health.kr/images/pills/shape03.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                    </button>
                     ))} 
                 </div>
                 </td>
