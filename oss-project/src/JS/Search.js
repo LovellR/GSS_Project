@@ -8,7 +8,7 @@ const Search = () => {
     const [secondMedicine, setSecondMedicine] = useState('');
     //const [thirdMedicine, setThirdMedicine] = useState('');
     const [result, setResult] = useState(null);
-
+    const [searched, setSearched] = useState(false);  // 검색여부 확인
 
     const handleSubmit  = (e) =>{
         e.preventDefault();
@@ -22,6 +22,7 @@ const Search = () => {
         axios.post('http://localhost:4000/Search', data)
         .then(res=>{
             setResult(res.data);
+            setSearched(true) // 검색시 true
             console.log(res.data);
         }) 
         .catch(function(error){
@@ -64,38 +65,40 @@ const Search = () => {
             </div> 
 
             <div className="result">
-            <h2 className='no-border'>병용금지여부 </h2>
-            {/* <p>아직 검색 결과가 없습니다</p> */}
-    
+                <div>
+                    <h2 className='no-border'>병용금지여부</h2>
+                    {result && result.length > 0 ? (
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>제품명A</th>
+                                        <th>업소명A</th>
+                                        <th>제품명B</th>
+                                        <th>업소명B</th>
+                                        <th>금기사유</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {result.map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{item.제품명A}</td>
+                                            <td>{item.업소명A}</td>
+                                            <td>{item.제품명B}</td>
+                                            <td>{item.업소명B}</td>
+                                            <td>{item.금기사유}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            <p>같이 먹지마세요!</p>
+                        </div>
+                    )
+                    )}
+                </div>
+            </div>
+                     
     <div>
-    {result && (
-    <div>
-        <h2 className='no-border'>병용금지여부</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>제품명A</th>
-                    <th>업소명A</th>
-                    <th>제품명B</th>
-                    <th>업소명B</th>
-                    <th>금기사유</th>
-                </tr>
-            </thead>
-            <tbody>
-                {result.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item.제품명A}</td>
-                        <td>{item.업소명A}</td>
-                        <td>{item.제품명B}</td>
-                        <td>{item.업소명B}</td>
-                        <td>{item.금기사유}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    </div>
-)}
-    </div>
 
             </div> 
         </div>
