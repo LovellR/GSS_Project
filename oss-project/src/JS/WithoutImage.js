@@ -137,7 +137,17 @@ return (
                 <div>
                     {colors.map((color, index) => (
                     <button key={index} onClick={() => handleColorSelection(color)} style={{ border: selectedColor === color ? '3px solid black' : '1px solid grey' }}>
-                    {color}
+                        {color === '하양' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'white'}}></div>
+                        )}
+                        {color === '파랑' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'blue'}}></div>
+                        )}
+                        {color === '노랑' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'yellow'}}></div>
+                        )}
+                        
+                        {color}
                     </button>
                     ))}
                 </div>
