@@ -74,6 +74,16 @@ return (
                 <div>
                     {types.map((type, index) => (
                     <button key={index} onClick={() => handletypeSelection(type)}style={{ border: selectedType === type ? '3px solid black' : '1px solid grey' }}>
+                    {type === '정제' && (
+                        <img src="https://www.health.kr/images/pills/type01.jpg" alt="정제" style={{ width: '50px', height: '50px' }} />
+                    )}
+                    {type === '경질캡슐' && (
+                        <img src="https://www.health.kr/images/pills/type02.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                    )}
+                    {type === '연질캡슐' && (
+                        <img src="https://www.health.kr/images/pills/type03.jpg" alt="연질" style={{ width: '50px', height: '50px' }} />
+                    )}
+                    {(type !== '정제' && type !== '경질캡슐' && type !== '연질캡슐') && type}
                     </button>
                     ))}
                 </div>
