@@ -60,3 +60,11 @@ def update_json_files(directory, new_drug_name):
     for filename in os.listdir(directory):
         if filename.endswith('.json'):
             file_path = os.path.join(directory, filename)
+
+            # JSON 파일 읽기
+            with open(file_path, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+
+            # categories 리스트의 name 필드 수정
+            if 'categories' in data and len(data['categories']) > 0:
+                data['categories'][0]['name'] = new_drug_name
