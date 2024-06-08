@@ -100,6 +100,15 @@ const Detect = () => {
             case '-4- 20mg':
                 message = '비유피-4정 20mg';
                 break;
+            case '- 0.2mg':
+                message = '베이슨정 0.2mg';
+                break;
+            case '-400mg-':
+                message = '이바펜400mg정';
+                break;
+            case '- 100mg-PTP -':
+                message = '바이메틴정 100mg/PTP (수출용)';
+                break;
             default:
                 message = '알 수 없는 약입니다.';
         }
