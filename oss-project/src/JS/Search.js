@@ -7,6 +7,7 @@ const Search = () => {
     const [firstMedicine, setFirstMedicine] = useState('');
     const [secondMedicine, setSecondMedicine] = useState('');
     //const [thirdMedicine, setThirdMedicine] = useState('');
+    const [result, setResult] = useState(null);
 
 
     const handleSubmit  = (e) =>{
@@ -20,6 +21,7 @@ const Search = () => {
 
         axios.post('http://localhost:4000/Search', data)
         .then(res=>{
+            setResult(res.data);
             console.log(res.data);
         }) 
         .catch(function(error){
@@ -63,7 +65,37 @@ const Search = () => {
 
             <div className="result">
             <h2 className='no-border'>병용금지여부 </h2>
-            <p>아직 검색 결과가 없습니다</p>
+            {/* <p>아직 검색 결과가 없습니다</p> */}
+    
+    <div>
+    {result && (
+    <div>
+        <h2 className='no-border'>병용금지여부</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>제품명A</th>
+                    <th>업소명A</th>
+                    <th>제품명B</th>
+                    <th>업소명B</th>
+                    <th>금기사유</th>
+                </tr>
+            </thead>
+            <tbody>
+                {result.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.제품명A}</td>
+                        <td>{item.업소명A}</td>
+                        <td>{item.제품명B}</td>
+                        <td>{item.업소명B}</td>
+                        <td>{item.금기사유}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    </div>
+)}
+    </div>
 
             </div> 
         </div>
