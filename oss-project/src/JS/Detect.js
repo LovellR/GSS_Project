@@ -58,6 +58,19 @@ const Detect = () => {
                                     style={{ display: 'inline-block', maxWidth: '100%', maxHeight: '400px' }} 
                                     src={imageSrc} 
                                 />
+                                {!detected && (
+                                    <button 
+                                        style={{ 
+                                            position: 'absolute', 
+                                            bottom: '10px', 
+                                            right: '10px',
+                                            padding: '10px'
+                                        }} 
+                                        onClick={handleDetect}
+                                    >
+                                        Detect
+                                    </button>
+                                )}
                             </div>
                         )}
                     </div>
