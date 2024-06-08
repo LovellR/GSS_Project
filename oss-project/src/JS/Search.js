@@ -6,7 +6,7 @@ import "./css/Search.css";
 const Search = () => {
     const [firstMedicine, setFirstMedicine] = useState('');
     const [secondMedicine, setSecondMedicine] = useState('');
-    const [thirdMedicine, setThirdMedicine] = useState('');
+    //const [thirdMedicine, setThirdMedicine] = useState('');
 
 
     const handleSubmit  = (e) =>{
@@ -15,7 +15,7 @@ const Search = () => {
         const data = {
             firstMedicine: firstMedicine,
             secondMedicine:secondMedicine,
-            thirdMedicine: thirdMedicine
+            //thirdMedicine: thirdMedicine
         }
 
         axios.post('http://localhost:4000/Search', data)
@@ -46,10 +46,12 @@ const Search = () => {
                         <span>두번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={secondMedicine} onChange={(e)=> setSecondMedicine(e.target.value)}/>
                     </div>
+                    {/* 
                     <div className="medicine-info">
                         <span>세번째 약</span>
                         <input type="text" placeholder="약 이름 입력" value={thirdMedicine} onChange={(e)=> setThirdMedicine(e.target.value)}/>
                     </div>
+                     */}
                     <button className="medi_btn" onClick={handleSubmit}>검색</button>
                 </div>
             </div>

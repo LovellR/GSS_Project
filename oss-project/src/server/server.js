@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 4000;
-const db = require('./config/db.js');
-const pharmacyDb = require('./config/pharmacy_db.js');
+//const db = require('./config/db.js');
+const db = require('./config/pharmacy_db.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
@@ -26,16 +26,20 @@ app.get("/", (req, res) => {
 app.post("/Search", (req, res) => {
     const firstMedicine = req.body.firstMedicine;
     const secondMedicine = req.body.secondMedicine;
-    const thirdMedicine = req.body.thirdMedicine;
+    //const thirdMedicine = req.body.thirdMedicine;
 
     console.log('Received data:');
     console.log('First Medicine:', firstMedicine);
     console.log('Second Medicine:', secondMedicine);
-    console.log('Third Medicine:', thirdMedicine);
+    //console.log('Third Medicine:', thirdMedicine);
 
-    //데이터 베이스 연결필요
+    const query = `
+    SELECT 제품명A, 업소명A, 제품명B, 업소명B, 금기사유 
+    FROM 병용금기약물 
+    WHERE 제품명A = ? AND 제품명B = ?`;
 
-    res.send('Data received');
+    const firstM = `%${firstMedicine}%`;
+    const secondM = `%${secondMedicine}%`;
 });
 
 /*
@@ -93,12 +97,12 @@ app.get("/api/pharmacies", async (req, res) => {
     const query = 'SELECT * FROM pharmacies WHERE address LIKE ?';
     const likeRegion = `%${region}%`;
 
-    pharmacyDb.query(query, [likeRegion], (err, results) => {
+    db.query(query, [likeRegion], (err, results) => {
         if (err) {
             console.error('Database query error:', err);
             return res.status(500).json({ error: 'Database query error' });
         }
-        console.log('Database query results:', results); // 디버깅을 위해 추가
+        // console.log('Database query results:', results); // 디버깅을 위해 추가
         res.json(results);
     });
 });
@@ -108,4 +112,3 @@ app.get("/api/pharmacies", async (req, res) => {
 app.listen(PORT, ()=> {
     console.log(`server on: http://localhost:${PORT}`);
 })
-
