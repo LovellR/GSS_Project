@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import axios from "axios";
 import "./css/PersonalEditor.css";
 
 const PersonalEditor = ({ onCreate }) => {
@@ -8,11 +9,22 @@ const PersonalEditor = ({ onCreate }) => {
     const onChangeContent = (e) => {
         setContent(e.target.value);
     };
-    const onSubmit = () =>{
+    const onSubmit = async () =>{
         if(!content){
             inputRef.current.focus();
             return;
         }
+
+        try {
+            const response = await axios.get("http://localhost:4000/api/old_table");
+            const data = response.data;
+
+            onCreate(data);
+        }catch (error){
+            console.error("Error checking drug: ", error);
+            alert("해당 약물은 조회되지 않습니다.");
+        }
+
         onCreate(content);
         setContent("");
     };
