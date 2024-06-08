@@ -185,6 +185,7 @@ return (
                         {color === '투명' && (
                         <div style={{ width: '50px', height: '50px', backgroundColor:'transp'}}></div>
                         )}
+
                     {color}
                     </button>
                     ))}

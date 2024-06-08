@@ -56,11 +56,21 @@ const Search = () => {
             </div>
             
             
-            <div className="search-pic">
+            <div className="search-pic"
+            style={{ 
+                backgroundColor: '#deedf77e', 
+                borderRadius: '10px', 
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+                padding: '20px', 
+                display: 'inline-block',
+                maxWidth: '90%',
+                marginTop: '20px'
+            }}>
             <span onClick={() => {
                     setVisible(!visible);
                 }}>{visible ? "닫기" : "무슨 약인지모르겠나요? 여길 클릭해주세요!"}</span>
             </div> 
+            
 
             <div className="result">
             <h2 className='no-border'>병용금지여부 </h2>
