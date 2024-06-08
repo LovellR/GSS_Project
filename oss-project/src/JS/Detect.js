@@ -11,6 +11,13 @@ const Detect = () => {
             alert('이미지 파일을 업로드해주세요.');
             return;
         }
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = () => {
+            setImageSrc(reader.result);
+            setDetected(false); // 이미지가 변경되면 detect 상태를 초기화합니다.
         };
     };
 
