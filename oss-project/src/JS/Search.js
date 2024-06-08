@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import "./css/Search.css";
+import Detect from './Detect';
 
 //병용금지페이지
 const Search = () => {
+    const [visible, setVisible] = useState(false);
     const [firstMedicine, setFirstMedicine] = useState('');
     const [secondMedicine, setSecondMedicine] = useState('');
     //const [thirdMedicine, setThirdMedicine] = useState('');
@@ -61,9 +63,24 @@ const Search = () => {
             </div>
             
             
-            <div className="search-pic">
-                    <span>무슨 약인지모르겠나요? 여길 클릭해주세요! </span>
+            <div className="search-pic"
+            style={{ 
+                backgroundColor: '#deedf77e', 
+                borderRadius: '10px', 
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+                padding: '20px', 
+                display: 'inline-block',
+                maxWidth: '90%',
+                marginTop: '20px'
+            }}>
+            <span onClick={() => {
+                    setVisible(!visible);
+                }}>{visible ? "닫기" : "무슨 약인지모르겠나요? 여길 클릭해주세요!"}</span>
             </div> 
+            <div className='uploadImager'>
+                {visible && <Detect />}
+            </div>
+            
 
             <div className="result">
                 <div>
