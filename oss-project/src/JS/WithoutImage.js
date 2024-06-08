@@ -36,7 +36,20 @@ const handleSubmit = (e) => {
 };
 
 return (
-    
+    <div style={{ 
+        backgroundColor: '#deedf77e', 
+        borderRadius: '10px', 
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+        padding: '20px', 
+        display: 'inline-block',
+        maxWidth: '90%',
+        marginTop: '20px',
+        whiteSpace: 'nowrap' // 줄 바꿈 허용
+    }}>
+        <h2>제품 정보 입력</h2>
+        
+    </div>
+    );
 }
 
 export default WithoutImage;
