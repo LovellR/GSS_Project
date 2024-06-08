@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import "./css/Search.css";
+import Detect from './Detect';
 
 //병용금지페이지
 const Search = () => {
@@ -70,6 +71,9 @@ const Search = () => {
                     setVisible(!visible);
                 }}>{visible ? "닫기" : "무슨 약인지모르겠나요? 여길 클릭해주세요!"}</span>
             </div> 
+            <div className='uploadImager'>
+                {visible && <Detect />}
+            </div>
             
 
             <div className="result">
