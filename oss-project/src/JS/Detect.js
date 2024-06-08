@@ -78,7 +78,21 @@ const Detect = () => {
             </div>
             <div>
                 {!imageSrc && (
-                    
+                    <div 
+                        style={{ 
+                            backgroundColor: '#deedf77e', 
+                            borderRadius: '10px', 
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+                            padding: '20px', 
+                            display: 'inline-block',
+                            maxWidth: '90%',
+                            marginTop: '20px'
+                        }}
+                    >
+                        <span onClick={() => setVisible(!visible)}>
+                            {visible ? "사진으로 검색하기" : "사진 없이 검색하기"}
+                        </span>
+                    </div>
                 )}
                 <div className='withoutimage'>
                     {visible && <WithoutImage />}
