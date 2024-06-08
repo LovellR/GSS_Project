@@ -45,6 +45,13 @@ const Detect = () => {
                             marginTop: '20px'
                         }}
                     >
+                        <input 
+                            accept="image/*" 
+                            multiple 
+                            type="file"
+                            style={{ padding: '3%', display: 'block', margin: '0 auto' }}
+                            onChange={onUpload}
+                        />
                         
                     </div>
                 )}
