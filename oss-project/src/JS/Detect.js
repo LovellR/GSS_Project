@@ -64,6 +64,18 @@ const Detect = () => {
         let message;
 
         switch (detection.class) {
+            case '- 250mg':
+                message = '대우세파클러캡슐 250mg';
+                break;
+            case '- 500mg':
+                message = '드로세프캡슐 500mg';
+                break;
+            case '- 20mcg':
+                message = '삼아아토크정 20mcg';
+                break;
+            case '- 5mg':
+                message = '프라스탄정 5mg';
+                break;
             
             default:
                 message = '알 수 없는 약입니다.';
