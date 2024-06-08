@@ -170,7 +170,21 @@ return (
                         {color === '남색' && (
                         <div style={{ width: '50px', height: '50px', backgroundColor:'navy'}}></div>
                         )}
-                    
+                        {color === '자주' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'#722f37'}}></div>
+                        )}
+                        {color === '보라' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'purple'}}></div>
+                        )}
+                        {color === '회색' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'grey'}}></div>
+                        )}
+                        {color === '검정' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'black'}}></div>
+                        )}
+                        {color === '투명' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'transp'}}></div>
+                        )}
                         {color}
                     </button>
                     ))}
