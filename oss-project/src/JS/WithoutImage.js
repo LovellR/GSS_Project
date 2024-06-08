@@ -107,6 +107,25 @@ return (
                         {shape === '반원형' && (
                         <img src="https://www.health.kr/images/pills/shape03.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
                         )}
+                        {shape === '삼각형' && (
+                        <img src="https://www.health.kr/images/pills/shape04.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '사각형' && (
+                        <img src="https://www.health.kr/images/pills/shape05.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '마름모형' && (
+                        <img src="https://www.health.kr/images/pills/shape06.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '오각형' && (
+                        <img src="https://www.health.kr/images/pills/shape10.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '육각형' && (
+                        <img src="https://www.health.kr/images/pills/shape08.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {shape === '팔각형' && (
+                        <img src="https://www.health.kr/images/pills/shape09.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                    {(shape !== '원형'&& shape !== '타원형' && shape !== '장방형' && shape !== '반원형'&& shape !== '삼각형'&& shape !== '사각형'&& shape !== '마름모형'&& shape !== '오각형'&& shape !== '육각형'&& shape !== '팔각형') && shape}
                     </button>
                     ))} 
                 </div>
