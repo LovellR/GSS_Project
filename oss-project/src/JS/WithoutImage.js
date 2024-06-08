@@ -132,6 +132,19 @@ return (
                 </td>
             </tr>
             <tr>
+                <td>색상 선택:</td>
+                <td>
+                <div>
+                    {colors.map((color, index) => (
+                    <button key={index} onClick={() => handleColorSelection(color)} style={{ border: selectedColor === color ? '3px solid black' : '1px solid grey' }}>
+                    {color}
+                    </button>
+                    ))}
+                </div>
+                </td>
+            </tr>
+            
+            <tr>
                 <td colSpan="2">
                 <button type="submit">제출</button>
                 </td>
