@@ -31,7 +31,17 @@ const Detect = () => {
 
         const base64Image = imageSrc.split(',')[1];
 
-        setDetected(true);
+        axios({
+            method: 'POST',
+            url: 'https://detect.roboflow.com/drug-classify/1',
+            params: {
+                api_key: 'tNmNvgeOtaGTjCjjRYHE'
+            },
+            data: base64Image,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
     };
 
     return (
