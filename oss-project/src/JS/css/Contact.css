@@ -37,6 +37,10 @@ h2 {
     border: 1px solid #1f93ff;
 }
 
+.content:focus {
+    outline: none;
+    border: 1px solid #1f93ff;
+}
 
 .content {
     height: 200px;
