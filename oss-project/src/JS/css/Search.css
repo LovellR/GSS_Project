@@ -136,5 +136,13 @@ option {
     background-color: rgb(204, 230, 239);
     color: black;
     font-size: 16px;
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+/* 선택된 옵션 요소의 스타일 */
+option:checked {
+    background-color:rgb(95, 176, 243);
+    color: white;
     font-weight: bold;
 }
