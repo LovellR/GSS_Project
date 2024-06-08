@@ -60,7 +60,15 @@ const Detect = () => {
             return '감지 결과가 없습니다.';
         }
 
-        
+        const detection = result.predictions[0];
+        let message;
+
+        switch (detection.class) {
+            
+            default:
+                message = '알 수 없는 약입니다.';
+        }
+
         return message;
     };
 
