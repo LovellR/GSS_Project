@@ -47,7 +47,19 @@ return (
         whiteSpace: 'nowrap' // 줄 바꿈 허용
     }}>
         <h2>제품 정보 입력</h2>
-        
+        <form onSubmit={handleSubmit}>
+        <table>
+            <tbody>
+            <tr>
+                <td>식별문자:</td>
+                <td>
+                <input type="text" value={identification} onChange={(e) => setIdentification(e.target.value)} />
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+        </form>
     </div>
     );
 }
