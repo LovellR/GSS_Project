@@ -31,17 +31,19 @@ const Contact = () => {
             <form ref={form} onSubmit={sendEmail} class="form">
                 <div>
                     <input 
-                        placeholder="제목" 
+                        placeholder="제목을 입력해주세요.(20자 이내)" 
                         name="title" 
                         className="title" 
                         type="text" 
+                        maxLength={20}
                     />
                     <br />
                     <input 
-                        placeholder="답변 받을 이메일을 적으시오" 
+                        placeholder="답변 받으실 이메일을 적어주세요" 
                         name='email'
                         className="email" 
                         type="email" 
+                        required
                     />
                     <br />
                     <textarea
