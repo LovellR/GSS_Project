@@ -49,7 +49,7 @@ const Detail = () => {
                 {visible && <User />}
             </div> 
             <div className='personal_result'>
-                <PersonalEditor />
+                <PersonalEditor onCreate={onCreate} />
                 <PersonalList />
             </div>
         </div>
