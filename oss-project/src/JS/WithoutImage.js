@@ -90,6 +90,17 @@ return (
                 </td>
             </tr>
             <tr>
+                <td>모양 선택:</td>
+                <td>
+                <div>
+                    {shapes.map((shape, index) => (
+                    <button key={index} onClick={() => handleShapeSelection(shape)}style={{ border: selectedShape === shape ? '3px solid black' : '1px solid grey' }}>
+                        </button>
+                    ))} 
+                </div>
+                </td>
+            </tr>
+            <tr>
                 <td colSpan="2">
                 <button type="submit">제출</button>
                 </td>
