@@ -1,7 +1,7 @@
 import os
 import json
 
-//약물 이름 및 위치 선언
+#약물 이름 및 위치 선언
 directories_and_drug_names = [
     ('K-004562_json', '대우세파클러캡슐 250mg'),
     ('K-004563_json', '어린이용타스펜정 160mg'),
@@ -54,3 +54,9 @@ directories_and_drug_names = [
     ('K-005227_json', '판디탈정'),
     ('K-005248_json', '영풍독시사이클린정 100mg'),
 ]
+
+def update_json_files(directory, new_drug_name):
+    # 디렉토리 내의 모든 파일에 적용
+    for filename in os.listdir(directory):
+        if filename.endswith('.json'):
+            file_path = os.path.join(directory, filename)
