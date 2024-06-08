@@ -34,7 +34,19 @@ const Detect = () => {
         <div>
             <div style={{ textAlign: 'center' }}>
                 {!visible && (
-                    
+                    <div className='detect'
+                        style={{ 
+                            backgroundColor: '#deedf77e', 
+                            borderRadius: '10px', 
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+                            padding: '20px', 
+                            display: 'inline-block',
+                            maxWidth: '90%',
+                            marginTop: '20px'
+                        }}
+                    >
+                        
+                    </div>
                 )}
             </div>
             <div>
