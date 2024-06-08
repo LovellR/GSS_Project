@@ -8,6 +8,21 @@ const Contact = () => {
     const PUBLIC_KEY = "oyhTWECKoFoWOfvAG";
     const form = useRef();
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
+            result => {
+                alert("성공적으로 전송되었습니다.");
+                form.current.reset();
+            },
+            error => {
+                console.log(error.text);
+                alert("전송이 실패하였습니다.");
+            },
+        );
+    };
+
     return (
         <div id="contact">
             <div>
