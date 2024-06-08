@@ -15,6 +15,18 @@ const dividers = ['없음', '(+)형', '(-)형', '기타', '전체'];
 const types = ['정제', '경질캡슐', '연질캡슐', '기타', '전체'];
 const colors = ['하양', '노랑', '주황', '분홍', '빨강', '갈색', '연두', '초록', '청록', '파랑', '남색', '자주', '보라', '회색', '검정', '투명', '전체'];
 
+const handleShapeSelection = (shape) => {
+    setSelectedShape(shape === selectedShape ? '' : shape);
+};
+
+const handletypeSelection = (type) => {
+    setSelectedType(type === selectedType ? '' : type);
+};
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+};
+
 return (
     
 }
