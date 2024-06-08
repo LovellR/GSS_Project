@@ -123,3 +123,35 @@ table {
   tr:hover {
     background-color: #f2f2f2;
   }
+
+  #alertMessage {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 옵션 요소의 기본 스타일 */
+option {
+    background-color: rgb(204, 230, 239);
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+/* 선택된 옵션 요소의 스타일 */
+option:checked {
+    background-color:rgb(95, 176, 243);
+    color: white;
+    font-weight: bold;
+}
+
+/* span 문구 스타일링 */
+#selectcity {
+    font-size: 20px; /* 텍스트 크기 조정 */
+    font-weight: bold; /* 굵은 글꼴 적용 */
+    color: #333; /* 글자색 변경 */
+    margin-bottom: 10px; /* 아래 여백 추가 */
+    display: block; /* 블록 레벨 요소로 변환 */
+}

@@ -1,0 +1,23 @@
+.footer {
+    text-align: center;
+    padding: 20px 0; /* 상하 여백 추가 */
+    background-color: #f9f9f9; /* 배경색 설정 */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px; 
+    font-size: smaller;
+    font-weight: bold;
+    color: grey;
+}
+
+.footer hr {
+    border-top: 1px solid #ddd; /* 가로선 스타일 추가 */
+    margin: 20px auto; /* 가로선 위치 조정 */
+    width: 50%; /* 가로선 길이 설정 */
+}

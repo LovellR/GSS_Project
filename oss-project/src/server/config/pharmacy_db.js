@@ -1,13 +1,13 @@
 const mysql = require('mysql');
 
-const pharmacyDb = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'pharmacy_db'
 });
 
-pharmacyDb.connect((err) => {
+db.connect((err) => {
     if (err) {
         console.error('MySQL connection error:', err);
         return;
@@ -15,4 +15,4 @@ pharmacyDb.connect((err) => {
     console.log('Connected to pharmacyDb MySQL database');
 });
 
-module.exports = pharmacyDb;
+module.exports = db;
