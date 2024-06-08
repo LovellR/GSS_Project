@@ -4,6 +4,7 @@ import "./css/Search.css";
 
 //병용금지페이지
 const Search = () => {
+    const [visible, setVisible] = useState(false);
     const [firstMedicine, setFirstMedicine] = useState('');
     const [secondMedicine, setSecondMedicine] = useState('');
     const [thirdMedicine, setThirdMedicine] = useState('');
@@ -56,7 +57,9 @@ const Search = () => {
             
             
             <div className="search-pic">
-                    <span>무슨 약인지모르겠나요? 여길 클릭해주세요! </span>
+            <span onClick={() => {
+                    setVisible(!visible);
+                }}>{visible ? "닫기" : "무슨 약인지모르겠나요? 여길 클릭해주세요!"}</span>
             </div> 
 
             <div className="result">
