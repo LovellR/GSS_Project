@@ -123,3 +123,9 @@ table {
   tr:hover {
     background-color: #f2f2f2;
   }
+
+  #alertMessage {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}

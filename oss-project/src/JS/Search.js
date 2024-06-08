@@ -26,8 +26,8 @@ const Search = () => {
             console.log(res.data);
         }) 
         .catch(function(error){
-            setResult([]);
-            alert('병용금기 약물에 해당 되지 않습니다');
+            setResult([]); // 이전에 조회된 경우 테이블을 감추기 위해 지정.
+            alert('병용금기 약에 조회되지 않습니다');
         });
     };
 
@@ -70,7 +70,7 @@ const Search = () => {
                     <h2 className='no-border'>병용금지여부</h2>
                     {result && result.length > 0 ? (
                         <div>
-                            <p>같이 먹지마세요!</p>
+                            <p id ="alertMessage">같이 먹지마세요!</p>
                             <table>
                                 <thead>
                                     <tr>
