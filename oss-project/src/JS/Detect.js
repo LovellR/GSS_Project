@@ -157,6 +157,12 @@ const Detect = () => {
                                         Detect
                                     </button>
                                 )}
+                                {detected && detectionResult && (
+                                    <div style={{ marginTop: '20px' }}>
+                                        <h3>감지 결과:</h3>
+                                        <p>{processDetectionResult(detectionResult)}</p>
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>
