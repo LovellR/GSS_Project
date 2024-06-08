@@ -14,7 +14,14 @@ const PersonalEditor = ({ onCreate }) => {
             return;
         }
         onCreate(content);
+        setContent("");
     };
+
+    const onKeyDown = (e) => {
+        if(e.keyCode === 13) {
+            onSubmit();
+        }
+    }
 
     return (
         <div className="editor_wrapper">
@@ -24,6 +31,7 @@ const PersonalEditor = ({ onCreate }) => {
                 ref={inputRef}
                 value={content}
                 onChange={onChangeContent}
+                onKeyDown={onKeyDown}
             />
             <button 
                 type="submit"
