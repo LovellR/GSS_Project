@@ -197,7 +197,17 @@ return (
                 <div>
                     {dividers.map((divider, index) => (
                     <button key={index} onClick={() => handledividerSelection(divider)} style={{ border: selectedDivider === divider ? '3px solid black' : '1px solid grey' }}>
-                        </button>
+                        {divider === '없음' && (
+                        <img src="https://www.health.kr/images/pills/line01.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {divider === '(+)형' && (
+                        <img src="https://www.health.kr/images/pills/line02.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {divider === '(-)형' && (
+                        <img src="https://www.health.kr/images/pills/line03.jpg" alt="경질" style={{ width: '50px', height: '50px' }} />
+                        )}
+                        {(divider !== '없음'&&divider !== '(+)형'&&divider !== '(-)형') && divider}
+                    </button>
                     ))}
                 </div>
                 </td>
