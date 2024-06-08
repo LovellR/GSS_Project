@@ -46,6 +46,13 @@ const Detect = () => {
             setDetectionResult(response.data);
             setDetected(true);
         })
+        .catch((error) => {
+            console.error(error.message);
+            alert('감지에 실패했습니다. 다시 시도해주세요.');
+        })
+        .finally(() => {
+            setLoading(false);
+        });
     };
 
     return (
