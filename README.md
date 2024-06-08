@@ -29,6 +29,8 @@ check package.json
 oss-project/src/server/node server.js  
 oss-project/npm start  
 
+데이터베이스파일은 크다보니 github에 업로드 하지 않았습니다. 데이터베이스 관련 문의는 연락주세요.
+
 
 ### 의존성
 #### Node 
