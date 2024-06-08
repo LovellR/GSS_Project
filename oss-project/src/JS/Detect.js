@@ -42,6 +42,10 @@ const Detect = () => {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
+        .then((response) => {
+            setDetectionResult(response.data);
+            setDetected(true);
+        })
     };
 
     return (
