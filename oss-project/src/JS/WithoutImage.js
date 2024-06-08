@@ -185,13 +185,23 @@ return (
                         {color === '투명' && (
                         <div style={{ width: '50px', height: '50px', backgroundColor:'transp'}}></div>
                         )}
-                        {color}
+                    {color}
                     </button>
                     ))}
                 </div>
                 </td>
             </tr>
-            
+            <tr>
+                <td>분할선 선택:</td>
+                <td>
+                <div>
+                    {dividers.map((divider, index) => (
+                    <button key={index} onClick={() => handledividerSelection(divider)} style={{ border: selectedDivider === divider ? '3px solid black' : '1px solid grey' }}>
+                        </button>
+                    ))}
+                </div>
+                </td>
+            </tr>
             <tr>
                 <td colSpan="2">
                 <button type="submit">제출</button>
