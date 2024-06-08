@@ -146,6 +146,18 @@ return (
                         {color === '노랑' && (
                         <div style={{ width: '50px', height: '50px', backgroundColor:'yellow'}}></div>
                         )}
+                        {color === '주황' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'orange'}}></div>
+                        )}
+                        {color === '분홍' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'pink'}}></div>
+                        )}
+                        {color === '빨강' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'red'}}></div>
+                        )}
+                        {color === '갈색' && (
+                        <div style={{ width: '50px', height: '50px', backgroundColor:'brown'}}></div>
+                        )}
                         
                         {color}
                     </button>
