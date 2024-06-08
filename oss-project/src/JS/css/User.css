@@ -33,3 +33,8 @@ label {
     cursor: pointer;
     border-radius: 8px;
 }
+
+.personal_btn:hover {
+    background-color: #4692e9; /* 바꾸고자 하는 배경 색상으로 변경 */
+    color: black;
+}
