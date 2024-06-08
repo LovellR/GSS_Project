@@ -8,18 +8,8 @@ import "./css/Detail.css";
 const mockPSearch = [
     {
         id:0,
-        content: "성분0",
-        isPossible: false,
-    },
-    {
-        id:1,
-        content: "성분1",
-        isPossible: false,
-    },
-    {
-        id:2,
-        content: "성분2",
-        isPossible: false,
+        content: "예시 성분",
+        isPossible: "O",
     },
 ];
 
@@ -52,7 +42,7 @@ const Detail = () => {
             </div> 
             <div className='personal_result'>
                 <PersonalEditor onCreate={onCreate} />
-                <PersonalList />
+                <PersonalList PSearch={PSearch} />
             </div>
         </div>
     );
