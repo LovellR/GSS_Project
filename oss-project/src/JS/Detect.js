@@ -76,6 +76,21 @@ const Detect = () => {
             case '- 5mg':
                 message = '프라스탄정 5mg';
                 break;
+            case '- 100mg-PTP':
+                message = '토비콤에스연질캡슐 100mg/PTP';
+                break;
+            case '- 200mg':
+                message = '무테린캡슐 200mg';
+                break;
+            case '-0-5-':
+                message = '화니돌0.5마이크로그램연질캡슐';
+                break;
+            case '- 1mg':
+                message = '트라시논정 1mg';
+                break;
+            case '- 25mg':
+                message = '산디문뉴오랄연질캡슐 25mg';
+                break;
             
             default:
                 message = '알 수 없는 약입니다.';
