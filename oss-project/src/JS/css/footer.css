@@ -11,4 +11,13 @@
 
 .footer ul li {
     margin-bottom: 10px; 
+    font-size: smaller;
+    font-weight: bold;
+    color: grey;
+}
+
+.footer hr {
+    border-top: 1px solid #ddd; /* 가로선 스타일 추가 */
+    margin: 20px auto; /* 가로선 위치 조정 */
+    width: 50%; /* 가로선 길이 설정 */
 }
