@@ -3,7 +3,22 @@ import "./css/User.css";
 
 const User = () => {
     const handleSave = () => {
+        const age = document.getElementById('age').value;
+        const preg = document.querySelector('input[name="opt_preg"]:checked')?.value || '';
+        const hearing = document.getElementById('hearing').checked;
+        const intellectual = document.getElementById('intellectual').checked;
 
+        const userData = {
+            age,
+            preg,
+            disabilities: {
+                hearing,
+                intellectual
+            }
+        };
+
+        localStorage.setItem('userData', JSON.stringify(userData));
+        alert('Data saved to local storage');
     };
     return (
         <div>
@@ -12,7 +27,7 @@ const User = () => {
                     <th colSpan="2">개인 이력 입력</th>
                 </tr>
                 <tr>
-                    <td><label htmlFor="age"></label></td>
+                    <td><label htmlFor="age">연령</label></td>
                     <td>
                         <select id="age" name="age">
                             <option value="0">10대 미만</option>
@@ -48,7 +63,7 @@ const User = () => {
                     </td>
                 </tr>
             </table>
-            <button onClick={handleSave}>저장</button>
+            <button className="personal_btn" onClick={handleSave}>저장</button>
         </div>
     );
 }

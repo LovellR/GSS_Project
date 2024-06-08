@@ -9,6 +9,11 @@
     margin: 10px;
 }
 
+.editor_wrapper input:focus {
+    outline: none;
+    border: 1px solid #1f93ff;
+}
+
 .editor_wrapper button {
     cursor: pointer;
     width: 90px;
@@ -19,3 +24,4 @@
     background-color: #1f93ff;
     color: white;
 }
+
