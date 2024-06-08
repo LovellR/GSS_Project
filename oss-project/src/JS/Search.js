@@ -8,7 +8,7 @@ const Search = () => {
     const [secondMedicine, setSecondMedicine] = useState('');
     //const [thirdMedicine, setThirdMedicine] = useState('');
     const [result, setResult] = useState(null);
-    const [searched, setSearched] = useState(false);  // 검색여부 확인
+    //const [searched, setSearched] = useState(false);  // 검색여부 확인
 
     const handleSubmit  = (e) =>{
         e.preventDefault();
@@ -22,11 +22,12 @@ const Search = () => {
         axios.post('http://localhost:4000/Search', data)
         .then(res=>{
             setResult(res.data);
-            setSearched(true) // 검색시 true
+            // setSearched(true) // 검색시 true
             console.log(res.data);
         }) 
         .catch(function(error){
-            alert('failed');
+            setResult([]);
+            alert('병용금기 약물에 해당 되지 않습니다');
         });
     };
 
@@ -69,6 +70,7 @@ const Search = () => {
                     <h2 className='no-border'>병용금지여부</h2>
                     {result && result.length > 0 ? (
                         <div>
+                            <p>같이 먹지마세요!</p>
                             <table>
                                 <thead>
                                     <tr>
@@ -91,12 +93,6 @@ const Search = () => {
                                     ))}
                                 </tbody>
                             </table>
-                            <p>같이 먹지마세요!</p>
-                        </div>
-                    ) : searched ? (
-                        <div>
-                            <p>해당되지 않습니다.</p>
-                            <p>같이 먹을 수 있어요!</p>
                         </div>
                     ) : (
                         <p>아직 검색 결과가 없습니다</p>
